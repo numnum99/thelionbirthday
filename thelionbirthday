@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عيد ميلاد الأسطورة 🦁🎂</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  color: #171717;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 18px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.page.active {
+  display: flex;
+  animation: appear 0.7s ease;
+}
+
+#page1 {
+  background: linear-gradient(135deg, #fff000, #ff9d00, #ff4b1f);
+}
+
+#page2 {
+  background: linear-gradient(135deg, #00f5d4, #00bbf9, #7b2cff);
+}
+
+#page3 {
+  background: linear-gradient(135deg, #c6ff00, #ffe600, #00e5ff);
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 55px);
+  line-height: 1.5;
+  text-shadow: 3px 3px white;
+  margin: 15px 0;
+}
+
+p {
+  font-size: clamp(18px, 4vw, 24px);
+  line-height: 2;
+}
+
+button {
+  border: 4px solid #171717;
+  border-radius: 50px;
+  background: white;
+  padding: 15px 25px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 6px #171717;
+  margin: 15px;
+}
+
+button:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.cat-frame {
+  width: min(90%, 420px);
+  height: 300px;
+  background: white;
+  border: 5px solid #171717;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 7px 8px #171717;
+}
+
+.cat-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.emoji {
+  font-size: 45px;
+  animation: dance 1s infinite alternate;
+}
+
+.lyrics {
+  width: min(95%, 750px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.line {
+  background: white;
+  border: 3px solid #171717;
+  border-radius: 20px;
+  padding: 15px 10px;
+  font-size: clamp(20px, 4.5vw, 29px);
+  font-weight: bold;
+  box-shadow: 4px 5px #171717;
+  animation: dance 1.2s infinite alternate;
+}
+
+.line:nth-child(2) { animation-delay: .2s; }
+.line:nth-child(3) { animation-delay: .4s; }
+.line:nth-child(4) { animation-delay: .6s; }
+
+.message {
+  background: rgba(255,255,255,.88);
+  border: 4px dashed #171717;
+  border-radius: 25px;
+  padding: 22px;
+  max-width: 850px;
+  box-shadow: 7px 8px #171717;
+}
+
+.message p {
+  font-size: clamp(17px, 3.5vw, 22px);
+  line-height: 2.1;
+}
+
+.floating {
+  position: absolute;
+  font-size: 35px;
+  animation: dance 1.5s infinite alternate;
+}
+
+.one { top: 5%; right: 5%; }
+.two { top: 8%; left: 5%; }
+.three { bottom: 5%; right: 7%; }
+.four { bottom: 6%; left: 7%; }
+
+.confetti {
+  position: fixed;
+  z-index: 99;
+  top: -40px;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+  font-size: 27px;
+}
+
+@keyframes dance {
+  from { transform: rotate(-7deg) translateY(0); }
+  to { transform: rotate(7deg) translateY(-10px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(.93); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- الصفحة الأولى -->
+<section class="page active" id="page1">
+
+  <span class="floating one">🎉</span>
+  <span class="floating two">🎂</span>
+  <span class="floating three">🦁</span>
+  <span class="floating four">💥</span>
+
+  <h1>🚨 انتبهي 🚨<br>عيد ميلاد الأسطورة وصل!</h1>
+
+  <div class="cat-frame">
+    <iframe
+      src="https://tenor.com/embed/5374673862437489948"
+      title="قطة عيد الميلاد"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p>استعدوا يا جماعة… الليلة فيها كمية هبال غير طبيعية 😂🔥</p>
+
+  <button onclick="goToPage(2)">
+    يلاااا نبدأ الحفلة 🥳
+  </button>
+
+</section>
+
+
+<!-- الصفحة الثانية: الأغنية -->
+<section class="page" id="page2">
+
+  <span class="floating one">🚨</span>
+  <span class="floating two">💃🏻</span>
+  <span class="floating three">🤡</span>
+  <span class="floating four">🍰</span>
+
+  <h1>🎤 النشيد الوطني للأسد 🦁</h1>
+
+  <div class="lyrics">
+    <div class="line">🚨 يا عيد ميلاد يخير من العرس 🚨</div>
+
+    <div class="line">ياعيد ميلادك يخير من العرس 💃🏻</div>
+
+    <div class="line">ياعيد ميلادك ياكيكه 🍰</div>
+
+    <div class="line">جبنالك كيكه 🤡🎂🔥</div>
+  </div>
+
+  <div class="emoji">🥁🎉🕺🏻🎉🥁</div>
+
+  <p>نبي تصفيق يا عالم! وين الجمهور؟ 😂👏</p>
+
+  <button onclick="goToPage(3)">
+    الرسالة السرية للأسد 🤫🦁
+  </button>
+
+</section>
+
+
+<!-- الصفحة الثالثة: الرسالة -->
+<section class="page" id="page3">
+
+  <span class="floating one">🦁</span>
+  <span class="floating two">👑</span>
+  <span class="floating three">🎂</span>
+  <span class="floating four">🎉</span>
+
+  <h1>🎉 رسالة خاصة للأسد 🦁</h1>
+
+  <div class="message">
+    <p>
+      ياو ياو وسع الطريق الكبير وصل 😻🫅<br>
+
+      نبدا الحفله على بركه الله أيد ميلا سئيد 🎉🎉<br>
+
+      طبعا اليوم باليل انولد القمر اللي هو الاسد 🦁🦁<br>
+
+      اومق كبر الاسد اللهم لا حسد ヾ(≧▽≦*)o<br>
+
+      ياي يا بطل صرت 21 بدون الاثنين طبعا 😂<br>
+
+      كل عام وانت بخيرر اسومم السبال كبرت يا جحشش صرت شايب كيف بنتفاهم 😔😔<br>
+
+      بس مايهم انا شباب وانت شيبه عجوز ويوووووو 😼😼<br>
+
+      و كل عام و اعز من الناس كلها بخير وصحه وسعاده عسى ايامك مديده بالفرح والسرور ومن مكانه لاعلى ويارب كل عام يمر يكون عام فيه خير لك اكثر من اللي قبله و يارب تنفتح لك ابواب الخير وين ما رحت و وين ما كنت ❤️❤️
+    </p>
+  </div>
+
+  <div class="emoji">🎂🎁🥳🦁👑❤️</div>
+
+  <button onclick="goToPage(1)">
+    أعيدي الحفلة من البداية 😂🔁
+  </button>
+
+</section>
+
+
+<script>
+function goToPage(number) {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number).classList.add("active");
+
+  makeConfetti();
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function makeConfetti() {
+  const emojis = ["🎉", "🎂", "🎈", "✨", "🦁", "💥", "🍰", "🥳"];
+
+  for (let i = 0; i < 35; i++) {
+    const piece = document.createElement("span");
+
+    piece.className = "confetti";
+    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.animationDelay = Math.random() * 1.5 + "s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(function() {
+      piece.remove();
+    }, 4500);
+  }
+}
+
+makeConfetti();
+</script>
+
+</body>
+</html>
